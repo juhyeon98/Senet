@@ -1,7 +1,6 @@
 using UnityEngine;
 
 using Stat;
-using Effect;
 
 public class Player : MonoBehaviour
 {
