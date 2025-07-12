@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         mDice = Dice.Create();
     }
 
-    public RoleDice => mDice.Role();
+    public void RoleDice() => mDice.Role();
 
-    public Action => mEffect.Active();
+    public void Action() => mEffect.Active();
 }
