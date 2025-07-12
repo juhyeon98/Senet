@@ -24,4 +24,9 @@ namespace Effect
     {
         HP, MP, AP, ATK, DEF, Size
     };
+
+    public enum EEffectType
+    {
+        HP, MP, AP, ATK, DEF
+    };
 }
