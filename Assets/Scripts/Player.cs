@@ -1,29 +1,27 @@
 using UnityEngine;
 
-using Stat;
-
 public class Player : MonoBehaviour
 {
     public StatData statData;
-    private uint[] mStatManager = new uint[(int)EStatType.Size];
+    private StatManager mStatManager;
     private Dice mDice;
     private Effect mEffect = null;
 
     public void Initialize(StatData statData)
     {
+        mStatManager = new StatManager(statData);
+
         if (statData == null)
         {
             throw new System.Exception("Stat data is null");
         }
-        this.statData = statData;
-
-        mStatManager[0] = statData.HP;
-        mStatManager[1] = statData.MP;
-        mStatManager[2] = statData.AP;
-        mStatManager[3] = statData.ATK;
-        mStatManager[4] = statData.DEF;
-
         mDice = Dice.Create();
+
+        Debug.Log($"[HP  : {mStatManager.HP}]");
+        Debug.Log($"[MP  : {mStatManager.MP}]");
+        Debug.Log($"[AP  : {mStatManager.AP}]");
+        Debug.Log($"[ATK : {mStatManager.ATK}]");
+        Debug.Log($"[DEF : {mStatManager.DEF}]");
     }
 
     public void RoleDice() => mDice.Role();
