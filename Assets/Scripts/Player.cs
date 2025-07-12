@@ -1,11 +1,11 @@
 using UnityEngine;
-using System.Collections;
-using System;
+
+using Stat;
 
 public class Player : MonoBehaviour
 {
     public StatData statData;
-    private uint[] mStatManager = new uint[EStatType.Size];
+    private uint[] mStatManager = new uint[(int)EStatType.Size];
     private Dice mDice;
     private Effect mEffect = null;
 
