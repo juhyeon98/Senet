@@ -4,18 +4,18 @@ public class Player : MonoBehaviour
 {
     public StatData statData;
     private StatManager mStatManager;
-    private Dice mDice;
+    private Inventory mInventory;
     private Effect mEffect = null;
 
     public void Initialize(StatData statData)
     {
         mStatManager = new StatManager(statData);
+        mInventory = new Inventory();
 
         if (statData == null)
         {
             throw new System.Exception("Stat data is null");
         }
-        mDice = Dice.Create();
 
         Debug.Log($"[HP  : {mStatManager.HP}]");
         Debug.Log($"[MP  : {mStatManager.MP}]");
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         Debug.Log($"[DEF : {mStatManager.DEF}]");
     }
 
-    public void RoleDice() => mDice.Role();
+    public void RoleDice() => mInventory.RoleAll();
 
     public void Action() => mEffect.Active();
 }
