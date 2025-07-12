@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using Effect;
+
 public class Dice : MonoBehaviour
 {
     public EffectData[] effectDatats = new EffectData[6];
